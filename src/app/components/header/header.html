@@ -1,1 +1,19 @@
-<p>header works!</p>
+<mat-toolbar>
+  <div class="logo-box">
+    <img src="favicon.ico" alt="Imagem da logo" />
+    <p>Lol tracker</p>
+  </div>
+
+  <div class="theme-change-box">
+    <button
+      mat-icon-button
+      (click)="toggleTheme()"
+      aria-label="Toggle theme"
+      [class.dark]="isDarkTheme()"
+      [class.light]="!isDarkTheme()"
+    >
+      <mat-icon *ngIf="!darkTheme()">light_mode</mat-icon>
+      <mat-icon *ngIf="darkTheme()">dark_mode</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
