@@ -1,1 +1,10 @@
-<p>search-bar works!</p>
+<div>
+  <input
+    matInput
+    type="text"
+    placeholder="Insira o nome do invocador que deseja buscar (incluindo a #)"
+    [(ngModel)]="searchText"
+    (keyup.enter)="onSearch()"
+  />
+  <button (click)="onSearch()"><mat-icon>search</mat-icon>Pesquisar</button>
+</div>

@@ -11,6 +11,7 @@
   --cinza-claro: #e8e8e8;
   --vermelho: #ef3a3a;
   --vermelho-hover: #ca3434;
+  background-color: var(--branco) !important;
 }
 
 // Tema Light
@@ -21,7 +22,7 @@ body.light-theme {
   --azul-menos-escuro: #161833;
   --azul-claro: #0082ed;
   --branco: #f2f2f2;
-  --branco-30: rgba(242,242,242,0.3);
+  --branco-30: rgba(242, 242, 242, 0.3);
   --cinza-claro: #e8e8e8;
   --vermelho: #ef3a3a;
   --vermelho-hover: #ca3434;
@@ -33,12 +34,12 @@ body.light-theme {
 body.dark-theme {
   --azul: #000217;
   --azul-escuro: #0f1022;
-  --azul-30: rgba(15,2,23,0.3);
+  --azul-30: rgba(15, 2, 23, 0.3);
   --azul-menos-escuro: #161833;
   --azul-claro: #66aaff;
   --branco: #171729;
   --branco-30: rgba(23, 23, 41, 0.3);
-  --cinza-claro: #181B31;
+  --cinza-claro: #181b31;
   --vermelho: #ff5555;
   --vermelho-hover: #ca3434;
   background-color: var(--azul-escuro) !important;
@@ -55,6 +56,7 @@ body {
   transition: background 0.3s, color 0.3s;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
