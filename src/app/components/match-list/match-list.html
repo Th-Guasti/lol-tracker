@@ -1,1 +1,63 @@
-<p>match-list works!</p>
+<div>
+  <h2>Partidas recentes (últimas 5 partidas)</h2>
+
+  <div *ngFor="let match of matches(); let i = index" class="match-card">
+    <div class="match-card-row">
+      <img class="champion-img" [src]="match.championImg" />
+      <div class="main-info">
+        <p class="game-info">{{ match.gameType }}</p>
+        <p class="date-info">{{ match.date }}</p>
+      </div>
+      <div class="box-details-info">
+        <div class="result" [ngClass]="match.victory ? 'victory' : 'defeat'">
+          {{ match.victory ? 'Vitória' : 'Derrota' }}
+        </div>
+        <div class="kda">{{ match.kda }}</div>
+        <div class="duration">{{ match.duration }}</div>
+        <button (click)="toggleDetails(i)">Detalhes</button>
+      </div>
+    </div>
+
+    <div *ngIf="match.detailsOpen" class="details-expand">
+      <div>
+        <div>
+          <strong>Time azul:</strong>
+
+          <div *ngFor="let player of match.blueTeam" class="player-row">
+            <div class="player-info-left">
+              <img [src]="player.championImg" class="player-img" />
+              <span class="player-nick">{{ player.nickname }}</span>
+            </div>
+            <div class="player-info-right">
+              <div>
+                <span>{{ player.kda }}</span>
+              </div>
+              <div>
+                <span>{{ player.farm }}cs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <strong>Time vermelho:</strong>
+
+          <div *ngFor="let player of match.redTeam" class="player-row">
+            <div class="player-info-left">
+              <img [src]="player.championImg" class="player-img" />
+              <span class="player-nick">{{ player.nickname }}</span>
+            </div>
+            <div class="player-info-right">
+              <div>
+                <span>{{ player.kda }}</span>
+              </div>
+              <div>
+                <span>{{ player.farm }}cs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
